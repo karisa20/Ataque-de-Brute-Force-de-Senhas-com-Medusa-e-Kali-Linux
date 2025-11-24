@@ -13,9 +13,11 @@ O objetivo é **simular ataques de força bruta** em diferentes serviços, enten
 
 Este projeto recria cenários reais de segurança ofensiva utilizando:
 
-* **Kali Linux** → Máquina atacante
-* **Metasploitable 2** → Máquina propositalmente vulnerável
-* **DVWA (Damn Vulnerable Web Application)** → Aplicação web vulnerável (opcional)
+* **Kali Linux** (192.168.56.102) → Máquina atacante
+* **Metasploitable 2** (192.168.56.101) → Máquina propositalmente vulnerável
+* **DVWA (Damn Vulnerable Web Application)** → Aplicação web vulnerável
+* **FTP (Protocolo de Transferência de Arquivos)** → protocolo de rede padrão usado para transferir arquivos entre um cliente e um servidor em uma rede baseada em TCP/IP, como a internet
+* **SMB (Server Message Block)** → protocolo de rede que permite o compartilhamento de arquivos, impressoras e outros recursos em uma rede
 
 As máquinas foram configuradas no **VirtualBox**, utilizando rede **“Host-Only”**, garantindo **isolamento total** e segurança para os testes.
 
@@ -27,9 +29,8 @@ Ao final deste projeto, você será capaz de:
 
 * Compreender ataques de **força bruta** em protocolos e serviços distintos (FTP, Web Forms e SMB)
 * Utilizar o **Kali Linux** e a ferramenta **Medusa** para auditoria de segurança
-* Documentar testes técnicos de maneira clara e estruturada
+* Documentar testes técnicos e Utilizar o **GitHub como portfólio**
 * Identificar vulnerabilidades comuns e propor medidas de mitigação
-* Utilizar o **GitHub como portfólio** técnico para registrar sua jornada de aprendizado
 
 ---
 
@@ -37,24 +38,23 @@ Ao final deste projeto, você será capaz de:
 
 As máquinas virtuais utilizadas foram:
 
-### Kali Linux (Atacante)
+### Kali Linux (Atacante - 192.168.56.102)
 
 * Ferramentas utilizadas:
 
   * `medusa`
-  * `hydra` (opcional, para comparação)
   * Wordlists personalizadas
-  * Ferramentas de enumeração (como `enum4linux-ng`)
+  * Ferramentas de enumeração (como `enum4linux-ng` e `nmap`)
 
-### Metasploitable 2 (Alvo)
+### Metasploitable 2 (Alvo - 192.168.56.101)
 
 * Serviços vulneráveis explorados:
 
   * FTP
   * SMB
-  * Web apps vulneráveis (DVWA quando configurado)
+  * Web apps vulneráveis
 
-### DVWA – Damn Vulnerable Web Application (Opcional)
+### DVWA – Damn Vulnerable Web Application
 
 * Usada para login bruteforce automatizado em formulários web
 
@@ -76,14 +76,14 @@ As máquinas virtuais utilizadas foram:
 
 ### 2. Automação de Força Bruta em Formulário Web (DVWA)
 
-* Teste em modo *Low Security*
-* Análise do fluxo de requisição (POST)
-* Disparo automatizado de tentativas
+* * Criação e uso de wordlist simples
+* Execução do brute force com Medusa
+* Validação de credenciais encontradas
 
 ### 3. Password Spraying em SMB com Enumeração de Usuários
 
-* Coleta de possíveis usuários
-* Tentativas distribuídas evitando lockout
+* Coleta de possíveis usuários (enum4linux)
+* Tentativas com Medusa
 * Acesso validado manualmente
 
 ---
@@ -95,7 +95,7 @@ Este repositório contém:
 * **README.md** (este arquivo)
 * Wordlists simples criadas manualmente (`/wordlists`)
 * Arquivos com os comandos utilizados (`/commands`)
-* Prints (`/images`)
+* Prints (`/images` nos comentários)
   
 ---
 
@@ -116,7 +116,7 @@ O projeto enfatiza medidas de segurança como:
 * Implementar políticas de senha forte
 * Adotar bloqueio temporário após tentativas falhas
 * Habilitar autenticação multifator
-* Minimizar exposição de serviços
+* Minimizar exposição de serviços (bloqueio de portas não utilizadas)
 * Monitorar logs de autenticação
 * Utilizar IDS/IPS para detectar padrões de brute force
 
