@@ -52,11 +52,7 @@ As máquinas virtuais utilizadas foram:
 
   * FTP
   * SMB
-  * Web apps vulneráveis
-
-### DVWA – Damn Vulnerable Web Application
-
-* Usada para login bruteforce automatizado em formulários web
+  * Web apps vulneráveis (DVWA)
 
 ### Rede
 
