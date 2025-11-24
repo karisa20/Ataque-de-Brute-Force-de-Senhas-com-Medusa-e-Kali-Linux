@@ -1,1 +1,40 @@
+Wordlist FTP (user)
+user
+admin
+root
+msfadmin
 
+Wordlist FTP (password)
+123456
+password
+qwerty
+admin
+root
+senha
+msfadmin
+
+Wordlist SMB (user)
+user
+msfadmin
+service
+
+Wordlist SMB (password)
+123456
+password
+Welcome123
+msfadmin
+
+Wordlist DVWA (user)
+user
+admin
+root
+msfadmin
+
+Wordlist DVWA (password)
+123456
+password
+qwerty
+admin
+root
+senha
+msfadmin
