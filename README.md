@@ -72,7 +72,7 @@ As máquinas virtuais utilizadas foram:
 
 ### 2. Automação de Força Bruta em Formulário Web (DVWA)
 
-* * Criação e uso de wordlist simples
+* Criação e uso de wordlist simples
 * Execução do brute force com Medusa
 * Validação de credenciais encontradas
 
@@ -110,8 +110,8 @@ Este repositório contém:
 O projeto enfatiza medidas de segurança como:
 
 * Implementar políticas de senha forte
-* Adotar bloqueio temporário após tentativas falhas
-* Habilitar autenticação multifator
+* Adotar bloqueio temporário após tentativas falhas (Rate Limit)
+* Habilitar autenticação multifator (MFA)
 * Minimizar exposição de serviços (bloqueio de portas não utilizadas)
 * Monitorar logs de autenticação
 * Utilizar IDS/IPS para detectar padrões de brute force
